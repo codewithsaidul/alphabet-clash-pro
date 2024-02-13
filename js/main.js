@@ -9,6 +9,10 @@ function showElement (element) {
     showScreen.classList.remove('hidden')
 }
 
+
+
+
+
 function getRandomAlphabet () {
     // Create an Alphabet Array
     const alphabetString = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -25,9 +29,27 @@ function getRandomAlphabet () {
 }
 
 
+function setBackgroundColor (element) {
+    let letter = document.getElementById(element)
+    letter.classList.add('bg-[#FFA500]')
+    return letter;
+}
+
+
 function startGame () {
     // Step 1 : Generate a Random Alphabet
-    getRandomAlphabet();
+    const alphabet = getRandomAlphabet();
+
+    // Lower Case Alphabet for Changing Color of Key
+    const lowerAlphabet = alphabet.toLowerCase();
+    
+
+    // Set Randomly Generated Alphabet to the Screen
+    const currentAlphabet = document.getElementById('current-alphabet');
+    currentAlphabet.innerText = alphabet;
+
+    // Set Background Color
+    setBackgroundColor(lowerAlphabet)
 }
 
 
@@ -43,6 +65,5 @@ function enterTheGame () {
     // Start The Game
     startGame();
 }
-
 
 
