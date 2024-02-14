@@ -36,6 +36,30 @@ function setBackgroundColor (element) {
 }
 
 
+// Capture The Key-Board Key Press
+
+function handleKey () {
+    
+   
+}
+
+
+document.addEventListener('keyup', function () {
+    const playerPressed = event.key;
+    console.log("Player Pressed : ", playerPressed);
+
+
+    const alphabet = document.getElementById('current-alphabet').innerText;
+    // const currentAlphabet = alphabet.toLowerCase();
+
+    if (playerPressed === alphabet) {
+        console.log("You are a Gainer")
+    } else {
+        console.log("You Are a Bad Player")
+    }
+})
+
+
 function startGame () {
     // Step 1 : Generate a Random Alphabet
     const alphabet = getRandomAlphabet();
