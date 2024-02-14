@@ -25,7 +25,8 @@
             <div class="flex flex-col items-center space-y-4">
                 <h1 class="text-5xl sm:text-8xl font__anton uppercase">Alpha Class Pro</h1>
                 <p class="text-center">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
-                <button onclick="enterTheGame()" class="btn bg-white text-black hover:bg-white text-2xl">Play Now</button>
+                <button onclick="enterTheGame()" class="btn bg-white text-black hover:bg-white text-2xl">Play
+                    Now</button>
             </div>
         </section>
         <!-- ============================ Home Section End =================================== -->
@@ -37,11 +38,12 @@
 
                 <!-- ==================== Screen Start ======================= -->
                 <div class="mt-24">
-                    <div 
+                    <div
                         class="artboard artboard-horizontal phone-6 border-[20px] border-[#010313CC] bg-[#ffffffb3] rounded-2xl">
-                        
+
                         <div class="flex justify-center">
-                            <p class="bg-[#2F2941] rounded-[0_0_12px_12px] text-white py-4 px-7">Don't watch keyboard  while playing...</p>
+                            <p class="bg-[#2F2941] rounded-[0_0_12px_12px] text-white py-4 px-7">Don't watch keyboard
+                                while playing...</p>
                         </div>
 
                         <div class="flex justify-center items-center h-full">
@@ -99,18 +101,20 @@
                 <!-- ==================== Life-Line Score Start ======================= -->
                 <div class="flex justify-between w-3/4">
                     <!-- ========== Button 1 =================== -->
-                    <button class="btn bg-[#894189] hover:bg-[#894189] text-white px-8 rounded-full border-0 outline-none">
+                    <button
+                        class="btn bg-[#894189] hover:bg-[#894189] text-white px-8 rounded-full border-0 outline-none">
                         Life
                         <img src="./images/love.svg" alt="life line love image">
-                        <span>1</span>
+                        <span id="current-life">5</span>
                     </button>
 
 
                     <!-- ================= Button 2 ============== -->
-                    <button class="btn bg-[#360490] hover:bg-[#360490] text-white px-8 rounded-full border-0 outline-none">
+                    <button
+                        class="btn bg-[#360490] hover:bg-[#360490] text-white px-8 rounded-full border-0 outline-none">
                         Score
                         <img src="./images/dolar.svg" alt="life line love image">
-                        <span>1</span>
+                        <span id="current-score">0</span>
                     </button>
                 </div>
                 <!-- ==================== Life-Line Score End ======================= -->
@@ -119,16 +123,19 @@
         <!-- ============================ Play Ground Section End =================================== -->
 
         <!-- ============================ Score Section End =================================== -->
-        <section class="score flex justify-center items-center min-h-screen hidden">
-            <div class="space-y-6 text-center text-white bg-[#ffffff33] p-5 rounded-lg">
-                <h1 class="text-5xl sm:text-8xl">
-                    <span>Score : </span>
-                    <span>14</span>
-                </h1>
+        <section id="game-score" class="hidden">
+            <div class="score flex justify-center items-center min-h-screen">
+                <div class="space-y-6 text-center text-white bg-[#ffffff33] p-5 rounded-lg">
+                    <h2 class="text-4xl">Game Over!</h2>
+                    <h1 class="text-5xl sm:text-8xl">
+                        <span>Score : </span>
+                        <span id="final-score">0</span>
+                    </h1>
 
-                <button class="btn bg-white text-black hover:bg-white text-2xl">Play Again</button>
+                    <button onclick="enterTheGame()" class="btn bg-white text-black hover:bg-white text-2xl">Play Again</button>
 
-                <p>Practice will make you Pro</p>
+                    <p>Practice will make you Pro</p>
+                </div>
             </div>
         </section>
         <!-- ============================ Score Section End =================================== -->
