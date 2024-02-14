@@ -15,12 +15,12 @@ function showElement (element) {
 
 function getRandomAlphabet () {
     // Create an Alphabet Array
-    const alphabetString = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const alphabetString = 'abcdefghijklmnopqrstuvwxyz';
     const alphabets = alphabetString.split('');
     
 
     // Get A Random Index 0 to 51
-    const randomNumber = Math.random() * 51;
+    const randomNumber = Math.random() * 25;
     const randomIndex = Math.round(randomNumber);
 
     // Get a Random Alphabet
@@ -28,7 +28,7 @@ function getRandomAlphabet () {
     return alphabet;
 }
 
-
+// Set Background Color
 function setBackgroundColor (element) {
     let letter = document.getElementById(element)
     letter.classList.add('bg-[#FFA500]')
@@ -36,31 +36,34 @@ function setBackgroundColor (element) {
 }
 
 
-// Capture The Key-Board Key Press
+// Remove Background Color
 
-function handleKey () {
-    
-   
+function removeBackground (element) {
+    const showScreen = document.getElementById(element);
+    showScreen.classList.remove('bg-[#FFA500]')
 }
 
 
+// Capture The Key-Board Key Press
+
 document.addEventListener('keyup', function () {
+
+    // Get Presseng Key With Keyboard
     const playerPressed = event.key;
-    console.log("Player Pressed : ", playerPressed);
 
-
+    // Get the Current Key
     const alphabet = document.getElementById('current-alphabet').innerText;
-    // const currentAlphabet = alphabet.toLowerCase();
+    const currentAlphabet = alphabet.toLowerCase();
 
-    if (playerPressed === alphabet) {
-        console.log("You are a Gainer")
-    } else {
-        console.log("You Are a Bad Player")
-    }
+    // Check The Current & Player Pressing Are Same or Not
+    if (playerPressed === currentAlphabet) {
+        removeBackground(currentAlphabet);
+        continueGame();
+    } 
 })
 
 
-function startGame () {
+function continueGame () {
     // Step 1 : Generate a Random Alphabet
     const alphabet = getRandomAlphabet();
 
@@ -87,7 +90,7 @@ function enterTheGame () {
 
 
     // Start The Game
-    startGame();
+    continueGame();
 }
 
 
